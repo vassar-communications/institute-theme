@@ -1,0 +1,47 @@
+.section--featured-image {
+	padding: 0;
+	min-height: 100vh;
+	background: #eee;
+
+	.columns-container {
+		display: flex;
+		min-height: 100vh;
+	}
+
+	.column {
+		width: 50%;
+	}
+	.content {
+		max-width: none;
+		padding: 0 !important;
+	}
+
+	.contains-text {
+		.container {
+			padding: clamp(1.3rem, 4vw, 4rem);
+			max-width: 40rem;
+		}
+	}
+
+	.contains-image {
+		position: relative;
+		position: sticky;
+		top: 0;
+		height: 100vh;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+
+	//	Exceptions
+
+	&.image-on-right .columns-container {
+		flex-direction: row-reverse;
+	}
+}
+

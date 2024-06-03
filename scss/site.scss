@@ -1,0 +1,15 @@
+:root {
+	--dull-green: #576d6c;
+	--forest-green: #3a4527;
+	--gold: #BF8808;
+	--linen: #ebebde;
+	
+	--h2-font-family: "futura-pt-condensed", sans-serif;
+	--h2-font-size: clamp(2rem, 8vw, 4rem);
+	--h2-color: #aaa;
+}
+
+@import "_go-through";
+@import "_compositions/_all";
+@import "_blocks/_all";
+@import "_utilities/_all";

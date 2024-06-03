@@ -1,0 +1,258 @@
+:root {
+  --dull-green: #576d6c;
+  --forest-green: #3a4527;
+  --gold: #BF8808;
+  --linen: #ebebde;
+  --h2-font-family: "futura-pt-condensed", sans-serif;
+  --h2-font-size: clamp(2rem, 8vw, 4rem);
+  --h2-color: #aaa;
+}
+
+.component--secondary-navigation {
+  display: block;
+}
+
+.component--hero-image.institute-innerpage-hero {
+  padding: 0;
+}
+
+.component .content h1.main-content-display-title {
+  font-weight: normal !important;
+  color: #a58e63;
+  text-transform: uppercase;
+  margin: 0 auto 0.5em;
+  position: relative;
+}
+
+.component .content h1.main-content-display-title:after,
+.field--name-field-main-content-body h3:after {
+  position: absolute;
+  content: "";
+  width: 4rem;
+  border-top: 0.4rem solid #ff665e;
+  left: 0;
+  top: 100%;
+}
+
+.title-content.has-accent.accent-honey-yellow.scripty {
+  font-family: professor !important;
+  text-transform: none !important;
+}
+
+.institute-2024-footer {
+  background-color: #c6ad7e;
+  position: relative;
+  padding: 1em;
+  color: #641a2b;
+}
+
+.institute-2024-footer .vassar-2024-logotype {
+  text-transform: uppercase;
+  font-family: masqualero;
+}
+
+.institute-2024-grid .stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+.institute-2024-grid .col:hover {
+  transform: scale(1.03);
+  /* box-shadow: 0 0.4rem 0.4rem rgba(0,0,0,0.2); */
+  cursor: pointer;
+  /* border-color: transparent; */
+  z-index: 10;
+}
+
+.institute-2024-grid .col,
+.institute-2024-grid .col .field--name-field-media-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.institute-2024-grid .col,
+.institute-2024-grid .col img {
+  transition: 0.4s all ease;
+}
+
+.institute-2024-grid .col:hover a {
+  /* color: #e00; */
+}
+
+.institute-2024-grid .field--name-field-media-credit {
+  display: none;
+}
+
+.institute-2024-grid .col:hover img {
+  transform: scale(1.1);
+}
+
+.institute-2024-grid .col a {
+  text-decoration: none;
+}
+
+/* .col-4 a:hover,
+.col-4 a:focus,
+.col-4 a:hover,
+.col-4 a:focus {
+	background-color: transparent !important;
+	color: #e00;
+}
+.col-4 a.stretched-link:focus:after,
+.col-4 a.stretched-link:focus:after {
+	border: 1px solid #e00;
+} */
+/* CTA Buttons */
+@media screen and (min-width: 50rem) {
+  .fixed-panel {
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 6rem;
+    min-width: 23rem;
+    z-index: 21;
+    border: 1px solid;
+  }
+}
+.not-front .rendered-news-view .views-row article {
+  border-bottom: none !important;
+}
+
+/* Masthead */
+.institute-masthead-compontent .content.py-3 {
+  padding: 0 !important;
+}
+
+.institute-masthead-2 {
+  z-index: 1000;
+  background: #641a2b;
+  border: 0.24em solid #c6ad7e;
+}
+
+.institute-masthead-2 .stretched-link {
+  text-decoration: none;
+}
+
+.institute-masthead-2 a.stretched-link:hover {
+  background-color: #aa956e;
+}
+
+.institute__main-title .vassar-logotype {
+  color: #951829;
+  text-transform: uppercase;
+}
+
+.institute__main-title .institute__sub-title {
+  font-family: covik-sans;
+  font-size: 0.8rem;
+  margin-top: 0.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-block;
+}
+
+.institute__main-title {
+  background: none;
+  color: inherit;
+  background-clip: unset;
+  font-size: 1em !important;
+  opacity: 1;
+}
+
+.institute-masthead-2 {
+  position: absolute;
+  top: 2.75vw;
+  left: 40%;
+  width: 14em;
+  padding: 1em;
+}
+
+.alias--institute .component--hero-image {
+  padding: 35% 5% 0;
+  filter: grayscale(1) blur(1px);
+  padding: 30% 5% 0%;
+  background-attachment: fixed;
+}
+
+.component--hero-image.institute-innerpage-hero {
+  padding: 2em;
+  background-position-y: center;
+  filter: blur(1px) grayscale(1);
+}
+
+.alias--institute .institute-masthead-2 {
+  top: 14vw;
+  left: 40%;
+}
+
+.alias--institute .hp-programs {
+  display: block;
+}
+
+.hp-programs {
+  display: none;
+}
+
+div#toolbar-administration {
+  display: block !important;
+}
+
+nav.tabs, .highlighted {
+  display: block !important;
+}
+
+.toolbar-fixed .toolbar-oriented .toolbar-bar {
+  position: static !important;
+}
+
+.component--main-content .content h2.main-content-display-title,
+.component--main-content .content h2.two-column-display-title {
+  font-size: var(--h2-font-size) !important;
+  font-family: var(--h2-font-family) !important;
+  color: var(--h2-color) !important;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section--featured-image {
+  padding: 0;
+  min-height: 100vh;
+  background: #eee;
+}
+.section--featured-image .columns-container {
+  display: flex;
+  min-height: 100vh;
+}
+.section--featured-image .column {
+  width: 50%;
+}
+.section--featured-image .content {
+  max-width: none;
+  padding: 0 !important;
+}
+.section--featured-image .contains-text .container {
+  padding: clamp(1.3rem, 4vw, 4rem);
+  max-width: 40rem;
+}
+.section--featured-image .contains-image {
+  position: relative;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.section--featured-image .contains-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section--featured-image.image-on-right .columns-container {
+  flex-direction: row-reverse;
+}
