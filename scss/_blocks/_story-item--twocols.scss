@@ -1,0 +1,209 @@
+/*	story-item
+	===
+	This is a large, clickable card. It differs from a call-to-action card
+	in that it typically indicates a story or page, not a resource/action. 
+
+  There are these:
+  - two-col
+	- 60-40 (wide image)
+	- small-image
+  - one-col
+
+  @todo
+  - assemble markup for both
+  - organize this file better
+  - write up specs for the different kinds
+
+*/
+
+.story-list {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.story-item--twoCols {
+  padding: min(3%, 1.4rem);
+  position: relative;
+  z-index: 1;
+  transition: 0.4s all ease;
+//  border-bottom: 1px solid #eee;
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--border-color, transparent);
+  margin-bottom: 2rem;
+
+  &:hover {
+	transform: scale(1.03);
+	box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+//	border-color: transparent;
+	z-index: 10;
+
+    .cta-link--arrow {
+	  gap: 0.6rem;
+	  color: #e00;
+
+	  svg path {
+		fill: #e00;
+	  }
+	}
+
+	img {
+	  transform: scale(1.1);
+	}
+  }
+
+  .story-item__title {
+	  position: unset;
+	  --underlineBorder-width: 4rem;
+	  --underlineBorder-thickness: 1px;
+	  
+	  a {
+		color: var(--title-linkColor, #333) !important;
+		
+		font-weight: inherit;
+
+		&:hover,
+		&:focus {
+			background-color: var(--title-linkBg, transparent) !important;
+			--title-linkColor: var(--title-linkColor-hover, #f00) !important;
+		}
+	  }
+	  
+	  @include underlineBorder(#e00);
+	  
+	  &:after {
+		//  the pseudo-element based way of adding an underline is not good because
+		//  it requires position:relative on the underlined element. That constrains
+		//  any stretched links to that element, when they should fill the parent container.
+		display: none;
+	  }
+  }
+
+  &:hover .story-item__title {
+//	color: #951829;
+	 --underlineBorder-width: 8rem;
+	 
+	 a {
+		 --title-link-color: #e00;
+	 }
+  }
+
+  img {
+	transition: 0.4s all ease;
+  }
+  &.cols-60-40,
+  &.cols-50-50,
+  &.cols-40-60 {
+	@include breakpoint("medium") {
+		align-items: flex-start;
+	  display: flex;
+	  gap: 2rem;
+	}
+  }
+  &.cols-60-40 {
+	.story-item-image {
+	  @include breakpoint("medium") {
+		max-width: 60%;
+	  }
+	}
+  }
+  &.cols-50-50 {
+	.story-item-image {
+	  @include breakpoint("medium") {
+		max-width: 50%;
+	  }
+	}
+  }
+  &.cols-40-60 {
+	.story-item-image {
+	  @include breakpoint("medium") {
+		max-width: 40%;
+	  }
+	}
+  }
+
+  .story-item-image {
+	overflow: hidden;
+
+	@include breakpoint("medium", "max") {
+	  margin-bottom: 1rem;
+	}
+  }
+
+  .story-item__byline {
+	margin-top: 0.4rem;
+  }
+
+  .story-item-text {
+	flex: 1;
+
+	p {
+		--font-size: var(--sansSerif-size-small);
+		--line-height: var(--sansSerif-size-small-lineHeight);
+	}
+	a {
+	  text-decoration: none !important;
+	  /*
+	  &:hover,
+	  &:focus {
+		  background-color: var(--text-linkBg, transparent) !important;
+		 --title-linkColor: var(--text-linkColor-hover, #f00) !important;
+	  }
+	  */
+	  &.stretched-link:focus:after {
+		border: 2px solid var(--linkFocusBorder, #f00);
+	  }
+	}
+	.story-item__title {
+	  font-weight: bold !important;
+	  font-family: var(--story-item__title-font, var(--serif-display));
+	  line-height: 1.1;
+	  font-size: var(--story-item__title-font-size, 2rem);
+	}
+  }
+  .story-item-image.small-image {
+	min-width: 10rem;
+	max-width: 40%;
+  }
+
+  .story-column-row .story-item {
+	gap: 1rem;
+  }
+
+  .story-column-row .story-item-text h2 {
+	font-family: var(--sans-serif);
+	font-variation-settings: "wght" 700;
+	font-size: 1.6rem;
+  }
+  .story-column-row .story-item-text h2:after {
+	left: 0;
+  }
+
+  a.story-item {
+	text-decoration: none;
+
+	&:hover {
+//	  background: #fff !important;
+	}
+  }  
+}
+
+.story-item-supertitle {
+	text-transform: uppercase;
+	font-variation-settings: "wght" 600;
+	font-size: 1rem !important;
+	color: #888 !important;
+	letter-spacing: 0.04rem;
+	margin-bottom: 0.2rem;
+	margin-top: 1.6rem;
+}
+
+
+// EP
+
+
+
+
+
+
+

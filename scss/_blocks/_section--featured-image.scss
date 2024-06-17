@@ -1,15 +1,20 @@
 .section--featured-image {
 	padding: 0;
 	min-height: 100vh;
-	background: #eee;
+	background: var(--bg-color, #fff);
 
 	.columns-container {
-		display: flex;
 		min-height: 100vh;
+
+		@include breakpoint("medium") {
+			display: flex;
+		}
 	}
 
 	.column {
-		width: 50%;
+		@include breakpoint("medium") {
+			width: 50%;
+		}
 	}
 	.content {
 		max-width: none;
@@ -18,25 +23,34 @@
 
 	.contains-text {
 		.container {
-			padding: clamp(1.3rem, 4vw, 4rem);
-			max-width: 40rem;
+			padding: 2rem;
+			max-width: 36rem;
+
+			@include breakpoint("medium") {
+				padding: clamp(1.3rem, 8vw, 4rem);
+				padding-top: 6rem;
+			}
 		}
 	}
 
 	.contains-image {
-		position: relative;
-		position: sticky;
-		top: 0;
-		height: 100vh;
-
-		img {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		padding: 1rem;
+		
+		@include breakpoint("medium") {
+			padding: 0;
+			position: relative;
+			position: sticky;
+			top: 0;
+			height: 100vh;
+	
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
-
 
 	//	Exceptions
 

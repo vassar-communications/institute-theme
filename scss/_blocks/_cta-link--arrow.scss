@@ -1,0 +1,38 @@
+
+.cta-link--arrow {
+	align-items: center;
+	display: flex;
+	gap: 0.4rem;
+	text-decoration: none !important;
+	width: fit-content;
+
+	&:hover {
+		 svg {
+			padding: 0.2rem;
+			background: var(--link-hot-color);
+			height: 1.4rem;
+			width: 1.4rem;
+		
+			path {
+				stroke: #fff;
+				fill: #fff;
+			}
+		}
+	}
+	
+	span {
+		font-weight: bold;
+	}
+	svg {
+		height: 1.2rem;
+		border-radius: 50%;
+		transition: 0.4s all ease;
+		width: 1.2rem;
+
+		path {
+			fill: var(--link-color, var(--burgundy-light));
+			stroke: var(--link-color, var(--burgundy-light));
+			stroke-width: 1rem;
+		}
+	}
+}

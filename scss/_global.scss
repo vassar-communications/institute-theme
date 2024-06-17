@@ -1,0 +1,61 @@
+.entity--type-node {	
+	li, p {
+		font-family: var(--font-family, var(--sans-serif)) !important;
+		font-size: var(--font-size, var(--content-font-size)) !important;
+		line-height: var(--line-height) !important;
+		
+		color: var(--text-color) !important;
+	}
+	a {
+		font-family: var(--font-family, var(--sans-serif)) !important;
+		font-size: var(--font-size, var(--content-font-size)) !important;
+
+		color: var(--link-color, var(--burgundy-light)) !important;
+		background-color: var(--link-bg-color, transparent) !important;
+		
+		&:visited {
+			color: var(--link-visited-color, var(--link-color)) !important;			
+		}
+		
+		&:hover, &:focus {
+			--link-color: var(--link-hot-color, var(--link-color)) !important;
+			background-color: var(--link-hot-bg-color, transparent) !important;
+		}
+	}
+}
+
+.component--main-content .content h1.main-content-display-title,
+.component--main-content .content h1.two-column-display-title {
+	font-size: var(--h1-font-size) !important;
+	font-family: var(--h1-font-family) !important;
+	font-weight: bold;
+	color: var(--text-color, var(--h1-color)) !important;
+	
+	text-transform: none;
+	
+	&:after {
+		border-color: var(--title-border-color);
+	}
+}
+
+.component--main-content .content h2,
+.component--main-content .content h2.main-content-display-title,
+.component--main-content .content h2.two-column-display-title {
+	font-size: var(--h2-font-size) !important;
+	font-family: var(--h2-font-family) !important;
+	color: var(--text-color, var(--h2-color)) !important;
+	
+	text-transform: none;
+	letter-spacing: normal;
+	margin-top: 2rem;
+	margin-bottom: 1rem;	
+}
+
+.field--name-field-main-content-body h3:not(.has-underline) {
+	margin-bottom: 0.8rem !important;
+	padding: 0 !important;
+
+	&:after {
+		display: none !important;
+	}
+}

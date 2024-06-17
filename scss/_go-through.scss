@@ -1,3 +1,6 @@
+/* go through */
+
+
 .component--secondary-navigation {
 	display: block;
 }
@@ -5,8 +8,8 @@
 	padding: 0;
 }
 .component .content h1.main-content-display-title {
-	font-weight: normal !important;
-	color: #a58e63;
+//	font-weight: normal !important;
+//	color: #a58e63;
 	text-transform: uppercase;
 	margin: 0 auto .5em;
 	position: relative;
@@ -25,7 +28,7 @@
 	text-transform: none !important;
 }
 .institute-2024-footer {
-	background-color: #c6ad7e;
+	background-color: #c6ad7e !important;
 	position: relative;
 	padding: 1em;
 	color: #641a2b;
@@ -171,4 +174,38 @@ nav.tabs, .highlighted {
 }
 .toolbar-fixed .toolbar-oriented .toolbar-bar {
 	position: static !important;
+}
+
+
+.institute-2024-grid p {
+	font-size: 1em !important;
+	line-height: 1.2em !important;
+}
+.component--side-navigation li {
+	font-size: 1.1em !important;
+	line-height: 1.2em !important;
+	margin-bottom: .5em
+}
+
+
+
+
+
+
+
+
+.story-item--twoCols h3.story-item__title {
+	font-family: var(--sans-serif) !IMPORTANT;
+	margin-top: 2rem;
+	font-size: 2rem;
+}
+
+h1.main-content-display-title {
+	margin-bottom: 4rem !important;
+}
+
+
+.story-item--twoCols p.story-item__meta {
+	--font-size: 1.1rem;
+	font-weight: bold;
 }

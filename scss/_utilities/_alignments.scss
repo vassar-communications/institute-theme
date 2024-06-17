@@ -1,0 +1,55 @@
+//  not sure if this is still used or needed
+.feature-align-right {
+  clear: right;
+}
+
+
+.feature-place-right,
+.feature-align-right {
+  float: right;
+  margin-right: -16rem;
+  margin-left: 4rem;
+  margin-bottom: 4rem;  
+  margin-top: 2rem;
+}
+
+.feature-place-left,
+.feature-align-left {
+  float: left;
+  margin-left: -16rem;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+
+  //  this places left items above the table of contents, if there is one.
+  z-index: 10;
+  position: relative;
+}
+
+.place-center,
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.component--main-content.center-title {
+  h1.main-content-display-title,
+  h2.main-content-display-title {
+    display: block !important;
+    text-align: center;
+  }
+  h1.main-content-display-title {
+    &:after {
+      left: calc(50% - 2rem)
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

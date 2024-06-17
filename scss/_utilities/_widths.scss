@@ -1,0 +1,71 @@
+
+.full-width {
+	&.component--main-content {
+		.content {
+			max-width: none;
+		}
+	}
+}
+
+
+
+//  Responsive percentage-based widths
+
+.w-60p {
+  width: 60%;
+}
+.w-sm-60p {
+  @include breakpoint("small") {
+	width: 60%;
+  }
+}
+.w-md-60p {
+  @include breakpoint("medium") {
+	width: 60%;
+  }
+}
+
+.w-50p {
+  width: 50%;
+}
+.w-sm-50p {
+  @include breakpoint("small") {
+	width: 50%;
+  }
+}
+.w-md-50p {
+  @include breakpoint("medium") {
+	width: 50%;
+  }
+}
+
+.w-33p {
+  width: 50%;
+}
+.w-sm-33p {
+  @include breakpoint("small") {
+	width: 33%;
+  }
+}
+.w-md-33p {
+  @include breakpoint("medium") {
+	width: 33%;
+  }
+}
+
+
+//  rem-based widths
+
+.mw-60rem {
+  max-width: 60rem;
+  --max-width: 60rem;
+}
+.mw-70rem {
+  max-width: 70rem;
+  --max-width: 70rem;
+}
+.mw-100rem {
+  max-width: 100rem;
+  --max-width: 100rem;
+}
+
