@@ -1,0 +1,36 @@
+.institute-masthead-2 {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	flex: 1;
+	width: 17rem;
+	padding: 0.4rem;
+	
+	left: 2.75vw;
+}
+
+h1.institute__main-title.no-transition.pt-2.pb-0.text-center {
+	width: 42rem;
+	text-align: left !important;
+	padding: 0 !important;
+}
+
+div#media-id--49901 {
+	width: 20rem;
+}
+
+.field--name-field-page-top-components {
+	position: relative;
+}
+
+ul.clearfix.menu {
+	--link-color: #156432;
+}
+
+.component.component--secondary-navigation.component--secondary-navigation--default.component--default.component--secondary-navigation--default--default.row.g-0 a {
+	transition: 0.2s all ease;
+}
+
+.component.component--secondary-navigation.component--secondary-navigation--default.component--default.component--secondary-navigation--default--default.row.g-0 a:hover {
+	color: #e00 !important;
+}

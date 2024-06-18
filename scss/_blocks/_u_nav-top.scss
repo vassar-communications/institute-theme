@@ -1,3 +1,54 @@
+@keyframes fade-in {
+  from {
+	opacity: 0;
+  }
+  to {
+	  opacity: 1;
+  }
+}
+
+.component--secondary-navigation .clearfix.menu {
+	max-width: 56rem;
+	margin: 2rem auto;
+}
+
+.component--secondary-navigation {
+	--left-border-offset: 13px;
+	--nav-item-border-size: 3px;
+	--border-hover-width: 6rem;
+	--nav-item-transition-speed: 0.3s;
+	--underline-color-hover: var(--honey-yellow);
+}
+
+.component--secondary-navigation li {
+	@include sequence();
+}
+
+.component--secondary-navigation li {
+	opacity: 0;
+}
+
+.js .component--secondary-navigation li {
+	animation-name: fade-in;
+    animation-duration: 0.8s;
+	animation-fill-mode: forwards;
+}
+
+.component--secondary-navigation a:hover,
+.component--secondary-navigation a.is-active {
+	background: unset;
+}
+
 .component--secondary-navigation {
 	--font-size: 1.2rem;
+	
+	a {
+		@include link-animStyle-underline((border-size: 1px));
+	}
+}
+
+
+
+p a {
+	@include link-animStyle-underline((border-size: 1px));
 }

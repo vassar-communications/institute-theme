@@ -1,0 +1,24 @@
+@mixin sequence($settings:()) {
+	//	deprecated
+	$defaults: (
+		interval: 0.1s,
+		offset: 0s,
+		max-items: 20,
+		type: animation,
+	);
+
+  $settings: map-merge($defaults, $settings);
+
+
+	
+	$interval: map-get($settings, 'interval');
+	$offset: map-get($settings, 'offset');
+	$max-items: map-get($settings, 'max-items');
+	$type: map-get($settings, 'type');
+
+	@for $i from 1 through $max-items {
+		&:nth-child(#{$i}) {
+			#{$type}-delay: $offset + ($interval * $i);
+		}
+	}
+}

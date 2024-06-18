@@ -55,8 +55,7 @@ $breakpoints: (
 	"large": 70em
 );	
 
-@import "_mixins/_breakpoints";
-@import "_mixins/_underline-border";
+@import "_mixins/_all";
 
 @import "_go-through";
 
@@ -64,3 +63,6 @@ $breakpoints: (
 @import "_compositions/_all";
 @import "_blocks/_all";
 @import "_utilities/_all";
+
+
+@import "_test";

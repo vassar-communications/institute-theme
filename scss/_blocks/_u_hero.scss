@@ -1,0 +1,7 @@
+.component--hero-image--default {
+	height: 60vh;
+	
+	@include breakpoint("medium") {
+		background-attachment: fixed;
+	}
+}

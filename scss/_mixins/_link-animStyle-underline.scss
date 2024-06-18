@@ -1,0 +1,44 @@
+//  $settings:()
+//  This makes the settings parameter optional
+@mixin link-animStyle-underline($settings:()) {
+  
+  //  The default settings for this mixin
+  $defaults: (
+	border-size: 1px
+  );
+
+  //  Take any settings the user specified, and combine
+  //  them with the defaults. User-specified settings will
+  //  overwrite the defaults; any default settings not
+  //  specified by the user will remain. 
+  $settings: map-merge($defaults, $settings);
+  
+  //  To get a setting, use map-get(array, key)
+  $nav-item-border-size: var(--nav-item-border-size, 1px);
+
+  text-decoration: none;
+  position: relative;
+  background-repeat: no-repeat !important;
+  background-position: var(--left-border-offset, 0) bottom !important;
+  transition: background var(--nav-item-transition-speed, 0.4s) cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s !important;
+  transition-property: background, color;
+  
+  //  Note that two background images are being defined here.
+  background-image: linear-gradient(
+	  to right,
+	  var(--underline-color-hover, #00f) 0%,
+	  var(--underline-color-hover, #00f) 100%
+	),
+	linear-gradient(
+	  to right,
+	  var(--underline-color, transparent) 0%,
+	  var(--underline-color, transparent) 100%
+	) !important;
+  background-size: 0% var(--nav-item-border-size, 1px), 100% var(--nav-item-border-size, 1px) !important;
+
+  &:hover,
+  &:focus {
+	opacity: 1 !important;
+	background-size: var(--border-hover-width, 100%) $nav-item-border-size !important;
+  }
+}
