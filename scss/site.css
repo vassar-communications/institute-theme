@@ -5,28 +5,33 @@
   --content-font-size: clamp(1.2rem, 2vw, 1.46rem);
   --woodland-green: #3a4527;
   --woodland-green-text: #556d2a;
+  --woodland-green-textOnBlack: #608026;
   --honey-yellow: #edb32e;
   --honey-yellow-light: #e4b54c;
   --linen: #ebebdc;
   --linen-light: #f5f5ec;
   --linen-dark: #dcdcc8;
+  --linen-textOnBlack: #c3c3a7;
   --burgundy-light: #951829;
   --dogwood-red: #823648;
   --text-color-default: #4A4A4A;
   --serif-display: freight-big-pro, Georgia, Times, Times New Roman, serif;
   --sans-serif: futura-pt;
   --sans-condensed: futura-pt-condensed, sans-serif;
+  --black-warm: #100;
   --sansSerif-size-small: 1.26rem;
   --sansSerif-size-small-lineHeight: 1.22;
   --sansSerif-size-verySmall: 1.1rem;
   --page-intro-size: clamp(1.8rem, 10vw, 2.4rem);
   --page-intro-lineHeight: 1.1;
+  --site-intro-size: clamp(2rem, 10vw, 3rem);
+  --site-intro-lineHeight: 1.1;
   --h1-font-family: "futura-pt-condensed", sans-serif;
   --h1-font-size: clamp(2rem, 6vw, 4.4rem);
   --h1-color: var(--forest-green-text);
   --h2-font-family: "futura-pt-condensed", sans-serif;
   --h2-font-size: clamp(2rem, 6vw, 3.8rem);
-  --h2-color: #aaa;
+  --h2-color: var(--woodland-green);
   --story-item__title-font: var(--sans-serif);
 }
 
@@ -196,17 +201,11 @@
 .alias--institute .component--hero-image {
   padding: 35% 5% 0;
   padding: 30% 5% 0%;
-  background-attachment: fixed;
 }
 
 .component--hero-image.institute-innerpage-hero {
   padding: 2em;
   background-position-y: center;
-}
-
-.alias--institute .institute-masthead-2 {
-  top: 14vw;
-  left: 40%;
 }
 
 .alias--institute .hp-programs {
@@ -356,6 +355,13 @@ h1.main-content-display-title {
   stroke-width: 1rem;
 }
 
+.site-intro {
+  --font-family: var(--serif-display);
+  --font-size: var(--site-intro-size);
+  --line-height: var(--site-intro-lineHeight);
+  --text-color: var(--woodland-green-text);
+}
+
 .page-intro {
   --font-family: var(--serif-display);
   --font-size: var(--page-intro-size);
@@ -370,6 +376,91 @@ h1.main-content-display-title {
 
 .component--main-content {
   background-color: var(--bg-color, #fff);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.marquee {
+  width: 100%;
+  height: 100vh;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+  padding: 0 2vw;
+}
+
+.marquee h3, .marquee p {
+  margin-top: 0;
+}
+
+.marquee > * {
+  position: absolute;
+  top: 0;
+  line-height: normal;
+}
+
+.marquee #marquee-contents-1 {
+  top: 0;
+  animation: marquee-1 14s linear infinite;
+}
+
+.marquee #marquee-contents-2 {
+  animation: marquee-2 14s linear infinite;
+}
+
+@keyframes marquee-1 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes marquee-2 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.marquee-contents {
+  padding-top: 0.01rem;
+}
+
+.podcast-scroller {
+  --bg-color: #100;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.podcast-scroller .content {
+  padding: 0 !important;
+}
+
+.podcast-guest {
+  border-bottom: 1px solid #222;
+  padding: 1rem 0;
+}
+.podcast-guest:nth-child(3n) h3 {
+  color: var(--woodland-green-textOnBlack);
+}
+.podcast-guest:nth-child(3n+1) h3 {
+  color: var(--corduroy-saturated);
+}
+.podcast-guest h3 {
+  font-size: clamp(2rem, 6vw, 4rem) !important;
+  font-weight: normal;
+  color: #edb32e;
+}
+
+.podcast-guest p {
+  color: #888 !important;
+  font-style: italic;
+  margin-top: -0.6rem;
 }
 
 .section--featured-image {
@@ -700,15 +791,30 @@ h1.main-content-display-title {
   --font-size: 1.2rem;
 }
 
+/*
 .component--hero-image--default {
-  height: 60vh;
+	height: 80vh;
+
+	@include breakpoint("medium") {
+		background-attachment: fixed;
+	}
 }
+*/
 @media screen and (min-width: 50em) {
-  .component--hero-image--default {
-    background-attachment: fixed;
+  .field--name-field-page-top-components .field__item:nth-child(2) {
+    top: 0;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    clip-path: inset(0 0 0 0);
+  }
+  .field--name-field-page-top-components .field__item:nth-child(2) div {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 80vh;
   }
 }
-
 .component--side-navigation {
   --font-size: 1.22rem;
   --line-height: 1.2;
@@ -828,19 +934,8 @@ h1.main-content-display-title {
   opacity: 1 !important;
   background-size: var(--border-hover-width, 100%) var(--nav-item-border-size, 1px) !important;
 }
-
-p a {
-  text-decoration: none;
-  position: relative;
-  background-repeat: no-repeat !important;
-  background-position: var(--left-border-offset, 0) bottom !important;
-  transition: background var(--nav-item-transition-speed, 0.4s) cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s !important;
-  transition-property: background, color;
-  background-image: linear-gradient(to right, var(--underline-color-hover, #00f) 0%, var(--underline-color-hover, #00f) 100%), linear-gradient(to right, var(--underline-color, transparent) 0%, var(--underline-color, transparent) 100%) !important;
-  background-size: 0% var(--nav-item-border-size, 1px), 100% var(--nav-item-border-size, 1px) !important;
-}
-p a:hover, p a:focus {
-  opacity: 1 !important;
+.component--secondary-navigation .menu-item--active-trail a {
+  --link-color: #e00;
   background-size: var(--border-hover-width, 100%) var(--nav-item-border-size, 1px) !important;
 }
 
@@ -887,6 +982,20 @@ footer.default.site-footer {
   left: calc(50% - 2rem);
 }
 
+.has-underborder {
+  position: relative;
+  padding-bottom: var(--border-distance, 2rem);
+  margin-bottom: var(--border-distance, 2rem);
+}
+.has-underborder:after {
+  position: absolute;
+  content: "";
+  border: var(--border, 2px solid var(--honey-yellow));
+  width: var(--border-width, 4rem);
+  left: 0;
+  bottom: 0;
+}
+
 .scheme-corduroy {
   --bg-color: var(--corduroy);
   --text-color: var(--linen-light);
@@ -924,6 +1033,12 @@ footer.default.site-footer {
 .scheme-whiteBg-corduroyText {
   --h1-color:	var(--corduroy-dark);
   --title-border-color: var(--honey-yellow);
+}
+
+.scheme-darkMode {
+  --bg-color: var(--black-warm);
+  --h2-color: var(--linen-dark);
+  --text-color: var(--linen-textOnBlack);
 }
 
 .full-width.component--main-content .content {

@@ -45,10 +45,14 @@
 	a {
 		@include link-animStyle-underline((border-size: 1px));
 	}
+	
+	.menu-item--active-trail {
+		a {
+			--link-color: #e00;
+			background-size: var(--border-hover-width, 100%) var(--nav-item-border-size, 1px) !important;
+		}
+	}
+	
 }
 
 
-
-p a {
-	@include link-animStyle-underline((border-size: 1px));
-}

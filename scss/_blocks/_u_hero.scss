@@ -1,7 +1,27 @@
+/*
 .component--hero-image--default {
-	height: 60vh;
+	height: 80vh;
 	
 	@include breakpoint("medium") {
 		background-attachment: fixed;
+	}
+}
+*/
+
+
+@include breakpoint("medium") {
+	.field--name-field-page-top-components .field__item:nth-child(2) {
+		top: 0;
+		height: 80vh;
+		width: 100%;
+		position: relative;
+		clip-path: inset(0 0 0 0);
+	}
+	
+	.field--name-field-page-top-components .field__item:nth-child(2) div {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		height: 80vh;
 	}
 }

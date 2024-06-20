@@ -1,3 +1,9 @@
+.site-intro {
+	--font-family: var(--serif-display);
+	--font-size: var(--site-intro-size);
+	--line-height: var(--site-intro-lineHeight);
+	--text-color: var(--woodland-green-text);
+}
 
 .page-intro {
 	--font-family: var(--serif-display);

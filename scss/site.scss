@@ -7,6 +7,7 @@
 
 	--woodland-green: #3a4527;
 	--woodland-green-text: #556d2a;
+	--woodland-green-textOnBlack: #608026;
 
 //	--gold: #BF8808;
 	--honey-yellow: #edb32e;
@@ -15,6 +16,7 @@
 	--linen: #ebebdc;
 	--linen-light: #f5f5ec;
 	--linen-dark: #dcdcc8;
+	--linen-textOnBlack: #c3c3a7;
 
 	--burgundy-light: #951829;
 
@@ -26,6 +28,7 @@
 	--sans-serif: futura-pt;
 	--sans-condensed: futura-pt-condensed, sans-serif;
 	
+	--black-warm: #100;
 	
 	--sansSerif-size-small: 1.26rem;
 	--sansSerif-size-small-lineHeight: 1.22;
@@ -35,6 +38,9 @@
 
 	--page-intro-size: clamp(1.8rem, 10vw, 2.4rem);
 	--page-intro-lineHeight: 1.1;
+
+	--site-intro-size: clamp(2rem, 10vw, 3rem);
+	--site-intro-lineHeight: 1.1;
 	
 	--h1-font-family: "futura-pt-condensed", sans-serif;
 	--h1-font-size: clamp(2rem, 6vw, 4.4rem);
@@ -42,7 +48,7 @@
 
 	--h2-font-family: "futura-pt-condensed", sans-serif;
 	--h2-font-size: clamp(2rem, 6vw, 3.8rem);
-	--h2-color: #aaa;
+	--h2-color: var(--woodland-green);
 
 
 	--story-item__title-font: var(--sans-serif);
