@@ -4,3 +4,15 @@
 		--line-height: var(--sansSerif-size-small-lineHeight);
 	}
 }
+
+.simple-media-item {
+   &.style-card {
+	--text-color: #444;
+	background: #fff;
+	padding: 0.4rem;
+
+	.simple-media-item__text {
+		padding: 1rem;
+	}
+  }
+}

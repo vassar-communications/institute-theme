@@ -9,6 +9,38 @@
 */
 
 
+@keyframes zoom-in {
+  from {
+	opacity: 0;
+	transform: scale(1.1);
+  }
+  to {
+	opacity: 1;
+	transform: scale(1);
+  }
+}
+
+@keyframes title-slide-in {
+  from {
+	opacity: 0;
+	transform: translateX(-1rem);
+  }
+  to {
+	opacity: 1;
+	transform: translateX(0);
+  }
+}
+
+.field--name-field-page-top-components .field__item:nth-child(2) {
+	background: #000;
+	
+	div {
+		opacity: 0;
+		animation-name: zoom-in;
+		animation-duration: 3s;
+		animation-fill-mode: forwards;
+	}
+}
 @include breakpoint("medium") {
 	.field--name-field-page-top-components .field__item:nth-child(2) {
 		top: 0;
@@ -25,3 +57,33 @@
 		height: 80vh;
 	}
 }
+
+
+.page-title-section {
+	--bg-color: transparent;
+	--text-color: #fff;
+	position: absolute;
+	top: 0;
+	height: 80vh;
+	width: 100%;
+	background: rgba(0,0,0,0.2);
+	display: flex;
+	align-content: flex-end;
+}
+
+.page-title-section .content {
+	margin: 0 !important;
+}
+
+.page-title-section .main-content-display-title {
+	text-shadow: 0 0 1rem #000;
+	margin: 0 !important;
+	padding: 0;
+	
+	opacity: 0;
+	animation-name: title-slide-in;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+
+}
+

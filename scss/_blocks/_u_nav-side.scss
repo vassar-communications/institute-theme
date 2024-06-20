@@ -1,4 +1,24 @@
 .component--side-navigation {
 	--font-size: 1.22rem;
 	--line-height: 1.2;
+	--text-dec: none;
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 {
+	background: transparent;
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 a {
+	--link-color: var(--corduroy-text);
+	--font-size: 1.16rem;
+	padding: 0.6rem 0;
+}
+
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 li:not(:last-child) a {
+	border-bottom:1px solid var(--honey-yellow-light);
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 li {
+	margin: 0;
 }

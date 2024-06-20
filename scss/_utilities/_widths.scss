@@ -16,12 +16,12 @@
 }
 .w-sm-60p {
   @include breakpoint("small") {
-	width: 60%;
+  	width: 60%;
   }
 }
 .w-md-60p {
   @include breakpoint("medium") {
-	width: 60%;
+  	width: 60%;
   }
 }
 
@@ -30,12 +30,12 @@
 }
 .w-sm-50p {
   @include breakpoint("small") {
-	width: 50%;
+  	width: 50%;
   }
 }
 .w-md-50p {
   @include breakpoint("medium") {
-	width: 50%;
+  	width: 50%;
   }
 }
 
@@ -44,28 +44,56 @@
 }
 .w-sm-33p {
   @include breakpoint("small") {
-	width: 33%;
+  	width: 33%;
   }
 }
 .w-md-33p {
   @include breakpoint("medium") {
-	width: 33%;
+  	width: 33%;
   }
 }
 
+//  max-width should not be applied to main content components. Applying mw- class
+//  to a main content component changes the max-width of .content, not the container. 
 
-//  rem-based widths
+
+.mw-standard {
+  --max-width: 48rem;
+  
+  &:not(.component--main-content) {
+    max-width: 48rem;
+  }
+}
+
+.mw-50rem {
+  --max-width: 50rem;
+  
+  &:not(.component--main-content) {
+    max-width: 50rem;
+  }
+}
 
 .mw-60rem {
-  max-width: 60rem;
   --max-width: 60rem;
+  
+  &:not(.component--main-content) {
+    max-width: 60rem;
+  }
 }
+
 .mw-70rem {
-  max-width: 70rem;
   --max-width: 70rem;
+  
+  &:not(.component--main-content) {
+    max-width: 70rem;
+  }
 }
+
 .mw-100rem {
-  max-width: 100rem;
   --max-width: 100rem;
+  
+  &:not(.component--main-content) {
+    max-width: 100rem;
+  }
 }
 

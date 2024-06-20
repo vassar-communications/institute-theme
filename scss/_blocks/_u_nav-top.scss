@@ -43,6 +43,7 @@
 	--font-size: 1.2rem;
 	
 	a {
+		--text-dec: none;
 		@include link-animStyle-underline((border-size: 1px));
 	}
 	

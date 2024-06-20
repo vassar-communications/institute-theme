@@ -12,12 +12,15 @@
 
 		color: var(--link-color, var(--burgundy-light)) !important;
 		background-color: var(--link-bg-color, transparent) !important;
+
+		text-decoration: var(--text-dec, underline) !important;
 		
 		&:visited {
 			color: var(--link-visited-color, var(--link-color)) !important;			
 		}
 		
 		&:hover, &:focus {
+			--text-dec: none;
 			--link-color: var(--link-hot-color, var(--link-color)) !important;
 			background-color: var(--link-hot-bg-color, transparent) !important;
 		}
@@ -59,3 +62,10 @@
 		display: none !important;
 	}
 }
+
+.component--main-content .content,
+.component--main-content-basic .content {
+	max-width: var(--max-width, 48rem);
+}
+
+

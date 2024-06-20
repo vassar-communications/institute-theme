@@ -1,5 +1,6 @@
 :root {
   --corduroy: #576d6c;
+  --corduroy-text: #358280;
   --corduroy-dark: #46605f;
   --corduroy-saturated: #3a8d8a;
   --content-font-size: clamp(1.2rem, 2vw, 1.46rem);
@@ -14,6 +15,9 @@
   --linen-textOnBlack: #c3c3a7;
   --burgundy-light: #951829;
   --dogwood-red: #823648;
+  --vassar-red: #d00;
+  --link-color: var(--vassar-red);
+  --link-hot-color: #000;
   --text-color-default: #4A4A4A;
   --serif-display: freight-big-pro, Georgia, Times, Times New Roman, serif;
   --sans-serif: futura-pt;
@@ -216,18 +220,6 @@
   display: none;
 }
 
-div#toolbar-administration {
-  display: block !important;
-}
-
-nav.tabs, .highlighted {
-  display: block !important;
-}
-
-.toolbar-fixed .toolbar-oriented .toolbar-bar {
-  position: static !important;
-}
-
 .institute-2024-grid p {
   font-size: 1em !important;
   line-height: 1.2em !important;
@@ -265,11 +257,13 @@ h1.main-content-display-title {
   font-size: var(--font-size, var(--content-font-size)) !important;
   color: var(--link-color, var(--burgundy-light)) !important;
   background-color: var(--link-bg-color, transparent) !important;
+  text-decoration: var(--text-dec, underline) !important;
 }
 .entity--type-node a:visited {
   color: var(--link-visited-color, var(--link-color)) !important;
 }
 .entity--type-node a:hover, .entity--type-node a:focus {
+  --text-dec: none;
   --link-color: var(--link-hot-color, var(--link-color)) !important;
   background-color: var(--link-hot-bg-color, transparent) !important;
 }
@@ -307,6 +301,11 @@ h1.main-content-display-title {
   display: none !important;
 }
 
+.component--main-content .content,
+.component--main-content-basic .content {
+  max-width: var(--max-width, 48rem);
+}
+
 .grid {
   display: grid;
 }
@@ -323,22 +322,33 @@ h1.main-content-display-title {
   }
 }
 
+.gap-1 {
+  --grid-gap: 1rem;
+}
+
 .cta-link--arrow {
+  --text-dec: none;
   align-items: center;
   display: flex;
   gap: 0.4rem;
-  text-decoration: none !important;
   width: fit-content;
 }
-.cta-link--arrow:hover svg {
-  padding: 0.2rem;
-  background: var(--link-hot-color);
-  height: 1.4rem;
-  width: 1.4rem;
-}
-.cta-link--arrow:hover svg path {
-  stroke: #fff;
-  fill: #fff;
+.cta-link--arrow:hover {
+  --text-dec: underline;
+  gap: 0.6rem;
+  /*
+  		 svg {
+  			padding: 0.2rem;
+  			background: var(--link-hot-color);
+  			height: 1.4rem;
+  			width: 1.4rem;
+
+  			path {
+  				stroke: #fff;
+  				fill: #fff;
+  			}
+  		}
+  */
 }
 .cta-link--arrow span {
   font-weight: bold;
@@ -520,6 +530,15 @@ body {
 .simple-media-item__text p {
   --font-size: var(--sansSerif-size-small);
   --line-height: var(--sansSerif-size-small-lineHeight);
+}
+
+.simple-media-item.style-card {
+  --text-color: #444;
+  background: #fff;
+  padding: 0.4rem;
+}
+.simple-media-item.style-card .simple-media-item__text {
+  padding: 1rem;
 }
 
 .stories-item-tile,
@@ -800,6 +819,36 @@ body {
 	}
 }
 */
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes title-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.field--name-field-page-top-components .field__item:nth-child(2) {
+  background: #000;
+}
+.field--name-field-page-top-components .field__item:nth-child(2) div {
+  opacity: 0;
+  animation-name: zoom-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
 @media screen and (min-width: 50em) {
   .field--name-field-page-top-components .field__item:nth-child(2) {
     top: 0;
@@ -815,9 +864,54 @@ body {
     height: 80vh;
   }
 }
+.page-title-section {
+  --bg-color: transparent;
+  --text-color: #fff;
+  position: absolute;
+  top: 0;
+  height: 80vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-content: flex-end;
+}
+
+.page-title-section .content {
+  margin: 0 !important;
+}
+
+.page-title-section .main-content-display-title {
+  text-shadow: 0 0 1rem #000;
+  margin: 0 !important;
+  padding: 0;
+  opacity: 0;
+  animation-name: title-slide-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
 .component--side-navigation {
   --font-size: 1.22rem;
   --line-height: 1.2;
+  --text-dec: none;
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 {
+  background: transparent;
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 a {
+  --link-color: var(--corduroy-text);
+  --font-size: 1.16rem;
+  padding: 0.6rem 0;
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 li:not(:last-child) a {
+  border-bottom: 1px solid var(--honey-yellow-light);
+}
+
+.component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 li {
+  margin: 0;
 }
 
 @keyframes fade-in {
@@ -921,6 +1015,7 @@ body {
   --font-size: 1.2rem;
 }
 .component--secondary-navigation a {
+  --text-dec: none;
   text-decoration: none;
   position: relative;
   background-repeat: no-repeat !important;
@@ -1024,6 +1119,8 @@ footer.default.site-footer {
 .scheme-white {
   --bg-color: #fff;
   --text-color: var(--text-color-default);
+  --link-color: var(--vassar-red);
+  --link-hot-color: #000;
 }
 
 .border-top-white {
@@ -1093,19 +1190,39 @@ footer.default.site-footer {
   }
 }
 
+.mw-standard {
+  --max-width: 48rem;
+}
+.mw-standard:not(.component--main-content) {
+  max-width: 48rem;
+}
+
+.mw-50rem {
+  --max-width: 50rem;
+}
+.mw-50rem:not(.component--main-content) {
+  max-width: 50rem;
+}
+
 .mw-60rem {
-  max-width: 60rem;
   --max-width: 60rem;
+}
+.mw-60rem:not(.component--main-content) {
+  max-width: 60rem;
 }
 
 .mw-70rem {
-  max-width: 70rem;
   --max-width: 70rem;
+}
+.mw-70rem:not(.component--main-content) {
+  max-width: 70rem;
 }
 
 .mw-100rem {
-  max-width: 100rem;
   --max-width: 100rem;
+}
+.mw-100rem:not(.component--main-content) {
+  max-width: 100rem;
 }
 
 .institute-masthead-2 {
@@ -1142,4 +1259,16 @@ ul.clearfix.menu {
 
 .component.component--secondary-navigation.component--secondary-navigation--default.component--default.component--secondary-navigation--default--default.row.g-0 a:hover {
   color: #e00 !important;
+}
+
+div#toolbar-administration {
+  display: block !important;
+}
+
+nav.tabs, .highlighted {
+  display: block !important;
+}
+
+.toolbar-fixed .toolbar-oriented .toolbar-bar {
+  position: static !important;
 }

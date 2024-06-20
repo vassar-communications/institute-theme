@@ -1,12 +1,16 @@
 
 .cta-link--arrow {
+	--text-dec: none;
 	align-items: center;
 	display: flex;
 	gap: 0.4rem;
-	text-decoration: none !important;
 	width: fit-content;
 
 	&:hover {
+		--text-dec: underline;
+		gap: 0.6rem;		
+
+/*
 		 svg {
 			padding: 0.2rem;
 			background: var(--link-hot-color);
@@ -18,6 +22,8 @@
 				fill: #fff;
 			}
 		}
+*/
+
 	}
 	
 	span {

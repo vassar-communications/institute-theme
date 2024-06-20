@@ -1,5 +1,6 @@
 :root {
 	--corduroy: #576d6c;
+	--corduroy-text: #358280;
 	--corduroy-dark: #46605f;
 	--corduroy-saturated: #3a8d8a;
 
@@ -21,7 +22,10 @@
 	--burgundy-light: #951829;
 
 	--dogwood-red: #823648;
+	--vassar-red: #d00;
 
+	--link-color: var(--vassar-red);
+	--link-hot-color: #000;
 	--text-color-default: #4A4A4A;
 	
 	--serif-display: freight-big-pro, Georgia, Times, Times New Roman, serif;
@@ -72,3 +76,6 @@ $breakpoints: (
 
 
 @import "_test";
+
+
+@import "_show-drupal-ui";
