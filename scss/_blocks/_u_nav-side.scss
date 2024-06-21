@@ -3,6 +3,9 @@
 	--line-height: 1.2;
 	--text-dec: none;
 }
+.component--side-navigation ul .active {
+	font-weight: bold;
+}
 
 .component.component--side-navigation.component--side-navigation--default.component--default.component--side-navigation--default--default.row.g-0 {
 	background: transparent;
@@ -12,6 +15,10 @@
 	--link-color: var(--corduroy-text);
 	--font-size: 1.16rem;
 	padding: 0.6rem 0;
+	
+	&:hover {
+		--text-dec: underline;
+	}
 }
 
 
