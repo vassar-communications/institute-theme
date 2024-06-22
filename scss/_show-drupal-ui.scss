@@ -7,3 +7,8 @@ nav.tabs, .highlighted {
 .toolbar-fixed .toolbar-oriented .toolbar-bar {
 	position: static !important;
 }
+
+
+.user-logged-in .field--name-field-page-top-components .field__item:nth-child(2) div {
+	top: 7.3rem;
+}

@@ -1,11 +1,28 @@
 .section--featured-image {
+	
+	--gap-space: clamp(1.3rem, 6vw, 6rem);
+	
 	padding: 0;
-	min-height: 100vh;
 	background: var(--bg-color, #fff);
 
-	.columns-container {
-		min-height: 100vh;
+	&:not(.style-compact) {
+		min-height: 100vh;		
 
+		.columns-container {
+			min-height: 100vh;
+		}
+		.contains-image {
+			@include breakpoint("medium") {
+				height: 100vh;
+			}
+		}
+	}
+	
+	&.style-compact {
+		margin: 1rem;
+	}
+	
+	.columns-container {
 		@include breakpoint("medium") {
 			display: flex;
 		}
@@ -41,7 +58,7 @@
 			position: relative;
 			position: sticky;
 			top: 0;
-			height: 100vh;
+//			height: 100vh;
 	
 			img {
 				position: absolute;
@@ -52,10 +69,27 @@
 		}
 	}
 
-	//	Exceptions
+	&:not(.image-on-right) {
+		.contains-text {
+			.container {
+				padding-left: var(--gap-space);
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+	}
 
-	&.image-on-right .columns-container {
-		flex-direction: row-reverse;
+	&.image-on-right {
+		.columns-container {
+			flex-direction: row-reverse;
+		}
+		.contains-text {
+			.container {
+				padding-right: var(--gap-space);
+				margin-right: 0;
+				margin-left: auto;
+			}
+		}
 	}
 }
 

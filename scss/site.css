@@ -250,38 +250,6 @@ h1.main-content-display-title {
   color: #fff !important;
 }
 
-.field--name-field-media-credit {
-  display: none;
-}
-
-.simple-media-item__image {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-
-.simple-media-item__image .align-center {
-  margin: 0 !important;
-}
-
-.simple-media-item__image {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 0.56rem;
-}
-
-.simple-media-item__image img {
-  margin: 0;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-}
-
-.simple-media-item__image .align-center {
-  margin: 0 !important;
-}
-
 .entity--type-node li, .entity--type-node p {
   font-family: var(--font-family, var(--sans-serif)) !important;
   font-size: var(--font-size, var(--content-font-size)) !important;
@@ -298,7 +266,7 @@ h1.main-content-display-title {
 .entity--type-node a:visited {
   color: var(--link-visited-color, var(--link-color)) !important;
 }
-.entity--type-node a:hover, .entity--type-node a:focus {
+.entity--type-node a:hover, .entity--type-node a:focus, .entity--type-node a:visited:hover, .entity--type-node a:visited:focus {
   --text-dec: none;
   color: var(--link-hot-color, var(--link-color)) !important;
   background-color: var(--link-hot-bg-color, transparent) !important;
@@ -607,17 +575,28 @@ body {
   content: "";
   width: 50%;
   height: 8rem;
-  background: linear-gradient(to bottom, rgb(245, 245, 236) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgb(245, 245, 236) 0%, rgb(245, 245, 236) 20%, rgba(255, 255, 255, 0) 100%);
   right: 0;
 }
 
 .section--featured-image {
+  --gap-space: clamp(1.3rem, 6vw, 6rem);
   padding: 0;
-  min-height: 100vh;
   background: var(--bg-color, #fff);
 }
-.section--featured-image .columns-container {
+.section--featured-image:not(.style-compact) {
   min-height: 100vh;
+}
+.section--featured-image:not(.style-compact) .columns-container {
+  min-height: 100vh;
+}
+@media screen and (min-width: 50em) {
+  .section--featured-image:not(.style-compact) .contains-image {
+    height: 100vh;
+  }
+}
+.section--featured-image.style-compact {
+  margin: 1rem;
 }
 @media screen and (min-width: 50em) {
   .section--featured-image .columns-container {
@@ -652,7 +631,6 @@ body {
     position: relative;
     position: sticky;
     top: 0;
-    height: 100vh;
   }
   .section--featured-image .contains-image img {
     position: absolute;
@@ -661,8 +639,18 @@ body {
     object-fit: cover;
   }
 }
+.section--featured-image:not(.image-on-right) .contains-text .container {
+  padding-left: var(--gap-space);
+  margin-left: 0;
+  margin-right: auto;
+}
 .section--featured-image.image-on-right .columns-container {
   flex-direction: row-reverse;
+}
+.section--featured-image.image-on-right .contains-text .container {
+  padding-right: var(--gap-space);
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .section--featured-image .column.contains-text {
@@ -683,6 +671,30 @@ body {
   text-underline-offset: 0.2rem;
 }
 
+.simple-media-item .field--name-field-media-credit {
+  display: none;
+}
+.simple-media-item .simple-media-item__image .align-center {
+  margin: 0 !important;
+}
+.simple-media-item.crop-3x4 .simple-media-item__image {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.56rem;
+}
+.simple-media-item[class*=crop-] img {
+  margin: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
+
+.simple-media-item__image .align-center {
+  margin: 0 !important;
+}
+
 .simple-media-item__text p {
   --font-size: var(--sansSerif-size-small);
   --line-height: var(--sansSerif-size-small-lineHeight);
@@ -695,6 +707,21 @@ body {
 }
 .simple-media-item.style-card .simple-media-item__text {
   padding: 1rem;
+}
+
+[class*=allSimpleMediaItems-crop-] img {
+  margin: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}
+
+.allSimpleMediaItems-crop-3x4 .simple-media-item__image {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.56rem;
 }
 
 .stories-item-tile,
@@ -954,6 +981,8 @@ body {
 }
 
 .fixed-panel {
+  border: 1px solid var(--burgundy-light);
+  border-bottom: none;
   --font-size: 1.2rem;
 }
 
@@ -1431,6 +1460,10 @@ nav.tabs, .highlighted {
 
 .toolbar-fixed .toolbar-oriented .toolbar-bar {
   position: static !important;
+}
+
+.user-logged-in .field--name-field-page-top-components .field__item:nth-child(2) div {
+  top: 7.3rem;
 }
 
 @custom-media --breakpoint (width < 768px);

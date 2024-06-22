@@ -19,7 +19,8 @@
 			color: var(--link-visited-color, var(--link-color)) !important;			
 		}
 		
-		&:hover, &:focus {
+		&:hover, &:focus,
+		&:visited:hover, &:visited:focus {
 			--text-dec: none;
 			color: var(--link-hot-color, var(--link-color)) !important;
 			background-color: var(--link-hot-bg-color, transparent) !important;
