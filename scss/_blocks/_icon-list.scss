@@ -1,0 +1,46 @@
+.icon-list {
+	background-color: var(--bg-color, #fff);
+	padding-left: 0;
+	
+	&.style-smallIcons {
+		--item-spacing: 0.6rem;
+		.icon-list__item-icon {
+			width: 2rem;
+		}
+	}
+	&.iconColor-green {
+		--icon-color: var(--woodland-green-text);
+	}
+}
+
+.icon-list__item {
+	display: flex;
+	gap: 1.2rem;
+	
+	&:not(:last-child) {
+		border-bottom: var(--item-border, 1px solid rgba(0,0,0,0.1));
+		padding-bottom: var(--item-spacing, 1rem);
+		margin: 0 0 var(--item-spacing, 1rem) 0 !important;		
+	}
+	
+	path {
+		fill: var(--icon-color);
+	}
+}
+
+.icon-list__item-icon {
+	width: 3rem;
+}
+
+.icon-list__item-content {
+	--font-size: 1.3rem;
+	--line-height: 1.1;
+	
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	flex: 1;
+}
+
+.icon-list__item-title {
+	--margin-bottom: 0.2rem;
+}

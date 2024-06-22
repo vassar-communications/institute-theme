@@ -1,0 +1,24 @@
+ul.list-2cols li {
+	border-bottom: 1px solid #ddd;
+//	margin: 0 !important;
+//	padding: 0.8rem 0;
+	list-style: none;
+}
+ul.list-2cols li:before {
+	content: "";
+	color: #c00;
+	font-size: 2rem;
+}
+ul.list-2cols {
+	@include breakpoint("medium") {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1.2rem;
+		padding: 0;
+	}
+}
+
+ul.list-2cols li {
+	--font-size: 1.3rem;
+	--line-height: 1.1;
+}

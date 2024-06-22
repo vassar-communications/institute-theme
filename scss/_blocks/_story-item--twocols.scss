@@ -54,8 +54,8 @@
 
   .story-item__title {
 	  position: unset;
-	  --underlineBorder-width: 4rem;
-	  --underlineBorder-thickness: 1px;
+//	  --underlineBorder-width: 4rem;
+//	  --underlineBorder-thickness: 1px;
 	  
 	  a {
 		color: var(--title-linkColor, #333) !important;
@@ -69,7 +69,7 @@
 		}
 	  }
 	  
-	  @include underlineBorder(#e00);
+//	  @include underlineBorder(#e00);
 	  
 	  &:after {
 		//  the pseudo-element based way of adding an underline is not good because

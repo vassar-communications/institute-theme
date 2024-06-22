@@ -21,9 +21,13 @@
 		
 		&:hover, &:focus {
 			--text-dec: none;
-			--link-color: var(--link-hot-color, var(--link-color)) !important;
+			color: var(--link-hot-color, var(--link-color)) !important;
 			background-color: var(--link-hot-bg-color, transparent) !important;
 		}
+	}
+	p:last-child,
+	p:only-child {
+		margin: 0
 	}
 }
 
@@ -41,21 +45,45 @@
 	}
 }
 
-.component--main-content .content h2,
-.component--main-content .content h2.main-content-display-title,
-.component--main-content .content h2.two-column-display-title {
-	font-size: var(--h2-font-size) !important;
-	font-family: var(--h2-font-family) !important;
-	color: var(--text-color, var(--h2-color)) !important;
-	
-	text-transform: none;
-	letter-spacing: normal;
-	margin-top: 2rem;
-	margin-bottom: 1rem;	
+.component--main-content:not(.page-title-section) {
+	h2 {
+		&,
+		&.main-content-display-title,
+		&.two-column-display-title {
+					
+			font-size: var(--h2-font-size) !important;
+			font-family: var(--h2-font-family) !important;
+			color: var(--text-color, var(--h2-color)) !important;
+			
+			text-transform: none;
+			letter-spacing: normal;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+	}
+	&:not(.no-title-underline) {
+		h2 {
+			position: relative;
+			
+			&:after {
+				position: absolute;
+				content: "";
+				width: 4rem;
+				border-top: var(--title-border, 0.4rem solid var(--honey-yellow));
+				left: var(--title-border-placement, 0);
+				top: 100%;
+			}
+		}
+	}
+	&.center-title {
+		--title-border-placement: calc(50% - 2rem);
+	}
 }
 
+
+
 .field--name-field-main-content-body h3:not(.has-underline) {
-	margin-bottom: 0.8rem !important;
+	margin-bottom: var(--margin-bottom, 0.8rem) !important;
 	padding: 0 !important;
 
 	&:after {

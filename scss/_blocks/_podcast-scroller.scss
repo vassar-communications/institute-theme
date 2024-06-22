@@ -4,8 +4,8 @@ body {
 }
 .marquee {
   width: 100%;
-  height: 100vh;
-  white-space: nowrap;
+  height: 100%;
+//  white-space: nowrap;
   overflow: hidden;
   position: relative;
   line-height: 0;
@@ -21,10 +21,10 @@ body {
 }
 .marquee #marquee-contents-1 {
   top: 0;
-  animation: marquee-1 14s linear infinite;
+  animation: marquee-1 24s linear infinite;
 }
 .marquee #marquee-contents-2 {
-  animation: marquee-2 14s linear infinite;
+  animation: marquee-2 24s linear infinite;
 //  animation-delay: 0s;
 }
 @keyframes marquee-1 {
@@ -61,7 +61,7 @@ body {
 
 
 .podcast-guest {
-	border-bottom: 1px solid #222;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 	padding: 1rem 0;
 
 	&:nth-child(3n) h3 {
@@ -73,16 +73,35 @@ body {
 	}
 
 	h3 {
-		font-size: clamp(2rem, 6vw, 4rem) !important;
-		font-weight: normal;
+		font-size: clamp(2rem, 6vw, 2rem) !important;
+		font-weight: bold;
 		color: #edb32e;
+		color: var(--dogwood-red);
+		--margin-bottom: 0;
 	}
 }
 
 .podcast-guest p {
-	color: #888 !important;
+	--text-color: #666;
 	font-style: italic;
 	margin-top: -0.6rem;
+	--font-size: 1.3rem;
+	width: 26rem;
 }
 
 
+
+
+
+
+
+
+
+.podcast-scroller:after {
+	position: absolute;
+	content: '';
+	width: 50%;
+	height: 8rem;
+	background: linear-gradient(to bottom,  rgba(245,245,236,1) 0%,rgba(255,255,255,0) 100%);
+	right: 0;
+}

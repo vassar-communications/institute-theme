@@ -59,3 +59,28 @@
 	}
 }
 
+
+
+
+
+//	go through
+.section--featured-image {
+	.column.contains-text {
+		--line-height: 1.2;
+	}
+	
+	p.story-item__byline {
+		--font-size: 1.2rem;
+		/* font-weight: bold; */
+	}
+	.column.contains-text h3.story-item__title,
+	.column.contains-text h3.story-item__title a {
+		font-family: "futura-pt-condensed" !important;
+		font-size: 2.2rem !important;
+		font-weight: bold;
+	}
+	.column.contains-text h3.story-item__title a {
+		text-decoration-thickness: 2px !important;
+		text-underline-offset: 0.2rem;
+	}
+}
