@@ -275,6 +275,9 @@ h1.main-content-display-title {
 .entity--type-node p:only-child {
   margin: 0;
 }
+.entity--type-node h3 a {
+  font-weight: var(--h3-a-font-weight, inherit) !important;
+}
 
 .component--main-content .content h1.main-content-display-title,
 .component--main-content .content h1.two-column-display-title {
@@ -331,13 +334,37 @@ h1.main-content-display-title {
 }
 @media screen and (min-width: 50em) {
   .grid-md-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap, 2rem);
+  }
+}
+@media screen and (min-width: 30em) {
+  .grid-md-3 {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--grid-gap, 2rem);
   }
 }
 @media screen and (min-width: 50em) {
   .grid-md-3 {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap, 2rem);
+  }
+}
+@media screen and (min-width: 30em) {
+  .grid-md-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap, 2rem);
+  }
+}
+@media screen and (min-width: 50em) {
+  .grid-md-4 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap, 2rem);
+  }
+}
+@media screen and (min-width: 70em) {
+  .grid-md-4 {
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--grid-gap, 2rem);
   }
 }
@@ -1325,6 +1352,11 @@ footer.default.site-footer {
   --bg-color: var(--black-warm);
   --h2-color: var(--linen-dark);
   --text-color: var(--linen-textOnBlack);
+}
+
+.bg-white {
+  background-color: #fff;
+  --bg-color: #fff;
 }
 
 .full-width.component--main-content .content {

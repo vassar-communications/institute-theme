@@ -30,6 +30,9 @@
 	p:only-child {
 		margin: 0
 	}
+	h3 a {
+		font-weight: var(--h3-a-font-weight, inherit) !important;
+	}
 }
 
 .component--main-content .content h1.main-content-display-title,

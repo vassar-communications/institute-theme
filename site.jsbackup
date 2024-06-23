@@ -1,0 +1,14 @@
+<script>
+var elementExists = document.getElementById("marquee-contents-1");
+if (elementExists !== null) {
+// Create a clone of element with id ddl_1:
+let clone = document.querySelector('#marquee-contents-1').cloneNode( true );
+// Change the id attribute of the newly created element:
+clone.setAttribute( 'id', 'marquee-contents-2' );
+// Append the newly created element on element p 
+document.querySelector('.marquee').appendChild( clone );
+}
+else {
+console.log("nope");
+}
+</script>
