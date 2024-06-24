@@ -19,6 +19,7 @@
 	--linen-dark: #dcdcc8;
 	--linen-textOnBlack: #c3c3a7;
 
+	--burgundy: #641a2b;
 	--burgundy-light: #951829;
 
 	--dogwood-red: #823648;
@@ -66,7 +67,7 @@ $breakpoints: (
 );	
 
 @import "_mixins/_all";
-
+@import "_animations";
 @import "_go-through";
 
 @import "_global";
@@ -78,7 +79,7 @@ $breakpoints: (
 @import "_test";
 
 
-@import "_show-drupal-ui";
+// @import "_show-drupal-ui";
 
 @import "_vendor/_littlefoot";
 

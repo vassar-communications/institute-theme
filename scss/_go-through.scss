@@ -99,47 +99,6 @@
 .not-front .rendered-news-view .views-row article {
 	border-bottom: none !important;
 }
-/* Masthead */
-.institute-masthead-compontent .content.py-3 {
-	padding: 0 !important;
-}
-.institute-masthead-2 {
-	z-index: 1000;
-	background: #641a2b;
-	border: .24em solid #c6ad7e;
-}
-.institute-masthead-2 .stretched-link {
-	text-decoration: none;
-}
-.institute-masthead-2 a.stretched-link:hover {
-	background-color: #aa956e;
-}
-.institute__main-title .vassar-logotype {
-	color: #951829;
-	text-transform: uppercase;
-}
-.institute__main-title .institute__sub-title {
-	font-family: covik-sans;
-	font-size: .8rem;
-	margin-top: 0.2em;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	display: inline-block;
-}
-.institute__main-title {
-	background: none;
-	color: inherit;
-	background-clip: unset;
-	font-size: 1em !important;
-	opacity:1;
-}
-.institute-masthead-2 {
-	position: absolute;
-	top:2.75vw;
-	left:40%;
-	width:14em;
-	padding: 1em;
-}
 .alias--institute .component--hero-image {
 	padding: 35% 5% 0;
 //	filter: grayscale(1) blur(1px);
@@ -212,3 +171,14 @@ h1.main-content-display-title {
 
 
 
+
+.expand-on-hover {
+	display: block;
+	transition: 0.4s all ease;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+//		filter: brightness(1.4);
+	}
+}

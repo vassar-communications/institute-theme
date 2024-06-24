@@ -2,4 +2,14 @@
 	border: 1px solid var(--burgundy-light);
 	border-bottom: none;
 	--font-size: 1.2rem;
+
+
+	background: var(--linen-light);
+	
+	a {
+		--link-bg-color: var(--burgundy-light);
+		--link-color: #fff;
+
+//		border-bottom: 2px solid #a00;
+	}
 }
