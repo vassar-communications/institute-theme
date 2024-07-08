@@ -1,7 +1,15 @@
 .fixed-panel {
-	border: 1px solid var(--burgundy-light);
-	border-bottom: none;
 	--font-size: 1.2rem;
+
+	border: 1px solid var(--burgundy-light);
+
+	@include breakpoint("medium", "max") {
+		margin-bottom: 2rem;
+	}
+	
+	@include breakpoint("medium") {
+		border-bottom: none;
+	}
 
 
 	background: var(--linen-light);

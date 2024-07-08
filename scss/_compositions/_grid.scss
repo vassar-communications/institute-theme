@@ -1,10 +1,32 @@
 .grid {
   display: grid;
 
+  @include breakpoint("small", "max") {
+    &-md-3,
+    &-md-4 {
+      & > * {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  @include breakpoint("medium", "max") {
+    &-md-2 {  
+      & > * {
+        margin-bottom: 1.4rem;
+      }
+    }
+  }
+
+  &.no-space-under-cols > * {
+    margin-bottom: 0;
+  }
+  
   &-md-2 {
     @include breakpoint("medium") {
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--grid-gap, 2rem);      
+      gap: var(--grid-gap, 2rem);
+      
     }
   }
   &-md-3 {

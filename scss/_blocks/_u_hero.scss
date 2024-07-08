@@ -18,16 +18,6 @@
 }
 
 
-@keyframes zoom-in {
-  from {
-	opacity: 0;
-	transform: scale(1.1);
-  }
-  to {
-	opacity: 1;
-	transform: scale(1);
-  }
-}
 
 @keyframes title-slide-in {
   from {
@@ -42,10 +32,11 @@
 
 .field--name-field-page-top-components .field__item:nth-child(2) {
 	background: #000;
+	overflow: hidden;
 	
 	div {
 		opacity: 0;
-		animation-name: zoom-in;
+		animation-name: zoom-in-10;
 		animation-duration: 3s;
 		animation-fill-mode: forwards;
 	}
@@ -69,8 +60,9 @@
 
 
 .page-title-section {
-//	padding: 0;
-	
+	@include breakpoint("medium", "max") {
+		padding: 0;
+	}	
 	@include breakpoint("medium") {
 		--bg-color: transparent;
 		--text-color: #fff;
@@ -83,6 +75,26 @@
 		align-content: flex-end;
 	}
 
+	&.hide-at-mobile {
+		//	Now see here - on the top-level pages (Signature Programs, Past Programs, etc) the name of the
+		//	top-level section is also the name of the page, so the title should be shown.
+		
+		//	But on a subpage, like "Art and Public Space at Vassar and in Poughkeepsie", the title of the page
+		//	is "Art and Public Space at Vassar and in Poughkeepsie". Since space is at a premium, Signature
+		//	Programs doesn't need to be shown, since it's already reflected in the selected nav item.
+		
+		//	There's no way to tell where a page is in the hierarchy - no classes or anything - so this class
+		//	needs to be manually applied to the page title component itself.
+		
+		@include breakpoint("medium", "max") {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			opacity: 0;
+		}		
+	}
+
 	.content {
 		margin: 0 !important;
 	}
@@ -90,6 +102,12 @@
 		margin: 0 !important;
 		display: block !important;
 		text-align: center;
+				
+		&:after {
+			@include breakpoint("medium", "max") {
+				left: calc(50% - 2rem) !important;
+			}
+		}
 
 		@include breakpoint("medium") {
 			text-align: left;
