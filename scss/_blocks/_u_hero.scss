@@ -1,3 +1,6 @@
+//	This does that nice page-title overlay on top-level pages
+
+
 /*
 .component--hero-image--default {
 	height: 80vh;
@@ -7,6 +10,12 @@
 	}
 }
 */
+
+.component--hero-image {
+	padding: 2em;
+	background-position-y: center;
+	height: 20rem;
+}
 
 
 @keyframes zoom-in {
@@ -60,30 +69,46 @@
 
 
 .page-title-section {
-	--bg-color: transparent;
-	--text-color: #fff;
-	position: absolute;
-	top: 0;
-	height: 80vh;
-	width: 100%;
-	background: rgba(0,0,0,0.2);
-	display: flex;
-	align-content: flex-end;
-}
-
-.page-title-section .content {
-	margin: 0 !important;
-}
-
-.page-title-section .main-content-display-title {
-	text-shadow: 0 0 1rem #000;
-	margin: 0 !important;
-	padding: 0;
+//	padding: 0;
 	
-	opacity: 0;
-	animation-name: title-slide-in;
-	animation-duration: 3s;
-	animation-fill-mode: forwards;
+	@include breakpoint("medium") {
+		--bg-color: transparent;
+		--text-color: #fff;
+		position: absolute;
+		top: 0;
+		height: 80vh;
+		width: 100%;
+		background: rgba(0,0,0,0.2);
+		display: flex;
+		align-content: flex-end;
+	}
 
+	.content {
+		margin: 0 !important;
+	}
+	.main-content-display-title {
+		margin: 0 !important;
+		display: block !important;
+		text-align: center;
+
+		@include breakpoint("medium") {
+			text-align: left;
+			padding: 0;			
+			opacity: 0;
+			animation-name: title-slide-in;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+			text-shadow: 0 0 1rem #000;
+		}
+	}
 }
 
+/*
+.component--hero-image.institute-innerpage-hero {
+	padding: 0;
+}
+.component--hero-image.institute-innerpage-hero {
+	padding: 2em;
+	background-position-y: center;
+}
+*/

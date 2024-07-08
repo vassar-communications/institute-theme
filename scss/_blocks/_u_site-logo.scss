@@ -3,9 +3,7 @@
 	align-items: center;
 	gap: 0.4rem;
 	flex: 1;
-	width: 18rem;
-	padding: 0.4rem;
-	
+	padding: 0.4rem;	
 	left: 2.75vw;
 }
 
@@ -19,9 +17,9 @@
 	z-index: 1000;
 	background: var(--burgundy);
 	border: 0.24em solid var(--burgundy);
-	position: absolute;
 	top: 2.75vw;
 	padding: 0.8rem 1rem;
+	width: 100%;
 
 	.stretched-link {
 		text-decoration: none;
@@ -33,6 +31,11 @@
 		&:hover {
 			background-color: #aa956e;
 		}
+	}
+	
+	@include breakpoint("small") {
+		position: absolute;
+		width: 18rem;
 	}
 }
 
