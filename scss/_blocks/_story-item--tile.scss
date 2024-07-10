@@ -17,7 +17,8 @@
 	margin: 0;
 	justify-content: flex-end;
 
-	.story-item--text {
+	// .story-item--text
+	.story-item__text {
 		p {
 			--font-size: var(--sansSerif-size-small);
 			--line-height: var(--sansSerif-size-small-lineHeight);
@@ -53,15 +54,21 @@
 
 
 	a.stretched-link:focus:after {
-	  border: 1px solid #e00;
+	  border: 2px solid #e00;
 	}
     .stories-item-image,
 	.story-item-image {
+		
+		.align-center {
+			&, img {
+				margin: 0 !important;				
+			}
+		}
 		overflow: hidden;
 	
-		@include breakpoint("medium", "max") {
+//		@include breakpoint("medium", "max") {
 		  margin-bottom: 1rem;
-		}
+//		}
 
 	    img {
 			transition: 0.4s all ease;
