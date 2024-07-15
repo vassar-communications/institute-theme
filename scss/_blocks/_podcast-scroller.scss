@@ -157,3 +157,11 @@ body {
 	min-height: unset !important;
 }
 
+
+
+
+//	adds space at the top since I can't figure out how to
+//	get rid of that layout glitch.
+.podcast-scroller .marquee-contents {
+	padding-top: 3rem;
+}
