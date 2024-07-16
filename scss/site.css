@@ -643,6 +643,17 @@ body {
   padding-top: 3rem;
 }
 
+.views-row .info p {
+  --line-height: 1.2;
+}
+.views-row .custom-linked-title h2 {
+  text-transform: unset;
+  letter-spacing: unset;
+}
+.views-row .custom-linked-title h2 a {
+  text-decoration: none !important;
+}
+
 .section--featured-image {
   --gap-space: clamp(1.3rem, 6vw, 6rem);
   padding: var(--section-padding, 0);
@@ -1213,7 +1224,7 @@ body {
 }
 
 .component--secondary-navigation .clearfix.menu {
-  max-width: 56rem;
+  max-width: 64rem;
   margin: 2rem auto;
 }
 

@@ -1,0 +1,17 @@
+.views-row {
+	.info {
+		p {
+			--line-height: 1.2;
+		}
+	}
+	.custom-linked-title {
+		h2 {
+			text-transform: unset;
+			letter-spacing: unset;
+
+			a {
+				text-decoration: none !important;
+			}
+		}
+	}
+}
