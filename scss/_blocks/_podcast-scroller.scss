@@ -32,7 +32,8 @@ body {
 	transform: translateY(0);
   }
   100% {
-	transform: translateY(-100%);
+//	transform: translateY(-100%);
+    transform: translateY(-50%);
   }
 }
 @keyframes marquee-2 {
@@ -45,9 +46,9 @@ body {
 }
 
 
-.marquee-contents {
-	padding-top: 0.01rem;
-}
+// .marquee-contents {
+//  	padding-top: 0.01rem;
+// }
 
 .podcast-scroller {
 	--bg-color: #100;
@@ -162,6 +163,6 @@ body {
 
 //	adds space at the top since I can't figure out how to
 //	get rid of that layout glitch.
-.podcast-scroller .marquee-contents {
-	padding-top: 3rem;
-}
+//	.podcast-scroller .marquee-contents {
+//		padding-top: 3rem;
+//	}

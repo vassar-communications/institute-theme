@@ -171,3 +171,55 @@ h1.main-content-display-title {
 //		filter: brightness(1.4);
 	}
 }
+
+
+
+
+/* fixes */
+
+
+.secondary_navigation a {
+	font-weight: bold !important;
+}
+
+
+html .component--main-content .page-title-section h1.main-content-display-title {
+  font-weight: bold !important;
+}
+
+
+span.institute__main-title.no-transition.text-white {
+    font-family: masqualero;
+}
+
+h3 {
+  font-family: var(--font-family, var(--sans-serif)) !important;
+}
+
+.component--secondary-navigation li a {
+    font-weight: bold;
+}
+
+
+
+
+.component--main-content .content h1.main-content-display-title {
+    font-weight: 600 !important;
+}
+
+
+
+.page-title-section h2.main-content-display-title {
+  font-family: futura-pt-condensed !important;
+  font-size: 3.4rem !important;
+}
+
+
+.institute-masthead-2 .stretched-link:after {
+ border: 1px solid var(--honey-yellow);
+}
+
+
+.section--featured-image .column.contains-text h3.story-item__title, .section--featured-image .column.contains-text h3.story-item__title a {
+  line-height: 1.1 !important;
+}
